@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Event List</title>
+</head>
+<body>
+
+    <h1 align="center">COLLEGE EVENT MANAGEMENT</h1>
+    <h2 align="center">Event Details</h2>
+
+    <table border="1" align="center" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Event ID</th>
+                <th>Event Name</th>
+                <th>Event Date</th>
+                <th>Venue</th>
+                <th>Organizer</th>
+            </tr>
+        </thead>
+
+        <tbody id="eventTable"></tbody>
+    </table>
+
+    <script>
+        fetch('/events')
+        .then(response => response.json())
+        .then(data => {
+            let rows = '';
+
+            data.forEach(event => {
+                rows += `
+                    <tr>
+                        <td>${event.event_id}</td>
+                        <td>${event.event_name}</td>
+                        <td>${event.event_date}</td>
+                        <td>${event.venue}</td>
+                        <td>${event.organizer}</td>
+                    </tr>
+                `;
+            });
+
+            document.getElementById('eventTable').innerHTML = rows;
+        });
+    </script>
+
+    <br>
+    <center>
+        <a href="insert.html">Insert New Event</a>
+    </center>
+
+</body>
+</html>

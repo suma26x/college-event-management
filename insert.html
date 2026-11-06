@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insert College Event</title>
+</head>
+<body>
+
+    <h1>College Event Management</h1>
+    <h2>Insert Event Details</h2>
+
+    <form action="/insert" method="POST">
+
+        <label>Event ID:</label>
+        <input type="number" name="event_id" required>
+        <br><br>
+
+        <label>Event Name:</label>
+        <input type="text" name="event_name" required>
+        <br><br>
+
+        <label>Event Date:</label>
+        <input type="date" name="event_date" required>
+        <br><br>
+
+        <label>Event Venue:</label>
+        <input type="text" name="venue" required>
+        <br><br>
+
+        <label>Organizer:</label>
+        <input type="text" name="organizer" required>
+        <br><br>
+
+        <button type="submit">Insert Event</button>
+
+    </form>
+
+    <br>
+    <a href="list.html">View Events</a>
+
+</body>
+</html>
